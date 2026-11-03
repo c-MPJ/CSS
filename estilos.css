@@ -36,3 +36,96 @@ footer p {
 .btn-comprar.btn-destacado {
     color: #c62828;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-image: url('header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(255, 255, 255);
+}
+
+main {
+    background-color: #c6aeae;
+}
+
+aside {
+    background-color: #e3f2fd;
+}
+
+footer {
+    background-color: #d1c4e9;
+}
+
+article {
+    padding: 20px;
+    margin: 15px;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    padding: 30px 20px;
+}
+
+header h1 {
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 15px 0;
+    padding: 10px 15px;
+}
+
+header nav ul {
+    background-color: rgba(255, 255, 255, 0.85);
+    list-style: none;
+    margin: 0;
+    padding: 10px 15px;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+aside {
+    float: left;
+    width: 25%;
+    padding: 20px;
+}
+
+main {
+    float: right;
+    width: 75%;
+    padding: 20px;
+}
+
+article {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+.btn-comprar {
+    border: 2px solid currentColor;
+    padding: 8px 14px;
+}
+
+footer {
+    clear: both;
+    padding: 20px;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
