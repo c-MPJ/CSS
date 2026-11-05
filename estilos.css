@@ -1,24 +1,43 @@
 :root {
-    --color-primario: #191970;          
-    --color-secundario: #D2691E;      
-    --color-acento: #DC143C;            
-    --color-texto: #2F4F4F;             
-    --color-fondo: #FDF5E6;             
-    --color-fondo-lateral: #FFF8DC;     
-    --color-superficie: #FFFFFF;        
-    --color-claro: #FFFAF0;             
-    --color-borde: #D2B48C;             
-    --color-panel: rgba(234, 192, 192, 0.85);
+    --color-primario: #2F4F4F;            
+    --color-secundario: #B8860B;          
+    --color-secundario-oscuro: #8B4513;   
+    --color-acento: #2F4F4F;              
+    --color-click: #556B2F;               
+    --color-texto: #333333;
+    --color-fondo: #FAF0E6;               
+    --color-fondo-lateral: #FFF8DC;       
+    --color-tarjeta-hover: #E0FFFF;       
+    --color-superficie: #FFFFFF;         
+    --color-claro: #FFFAF0;               
+    --color-borde: #D2B48C;               
+    --color-panel: rgba(255, 255, 255, 0.88);
 
     --fuente-principal: 'Poppins', Arial, Helvetica, sans-serif;
 
     --espaciado-pequeno: 8px;
     --espaciado-medio: 16px;
     --espaciado-grande: 24px;
+
+    --radio: 6px;
+    --transicion: 0.3s ease;
+    --sombra: 0 8px 20px rgba(47, 79, 79, 0.3);
 }
 
 * {
     box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    color: var(--color-texto);
+    line-height: 1.6;
+    margin: 0;
+}
+
+h1,
+h2 {
+    color: var(--color-primario);
 }
 
 header {
@@ -32,6 +51,7 @@ header {
 
 header h1 {
     background-color: var(--color-panel);
+    border-left: 6px solid var(--color-secundario);
     margin: 0 0 var(--espaciado-medio) 0;
     padding: var(--espaciado-pequeno) var(--espaciado-medio);
 }
@@ -50,14 +70,23 @@ header nav ul li {
 
 header nav ul li a {
     color: var(--color-primario);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--transicion);
 }
 
-aside ul li a {
-    color: var(--color-secundario);
+header nav ul li a:hover {
+    color: var(--color-secundario-oscuro);
 }
 
 footer ul li a {
     color: var(--color-claro);
+    text-decoration: none;
+    transition: color var(--transicion);
+}
+
+footer ul li a:hover {
+    color: var(--color-borde);
 }
 
 aside {
@@ -67,6 +96,52 @@ aside {
     padding: var(--espaciado-grande);
 }
 
+/* NUEVO: línea dorada bajo el título del menú */
+aside h2 {
+    margin-top: 0;
+    padding-bottom: var(--espaciado-pequeno);
+    border-bottom: 3px solid var(--color-secundario);
+}
+
+aside ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: var(--espaciado-pequeno);
+}
+
+aside ul li a {
+    display: block;
+    padding: var(--espaciado-pequeno) var(--espaciado-medio);
+    color: var(--color-secundario-oscuro);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radio);
+    transition: background-color var(--transicion), color var(--transicion);
+}
+
+aside ul li a::before {
+    content: "\25B8  ";
+    color: var(--color-secundario);
+}
+
+aside ul li a:hover {
+    background-color: var(--color-primario);
+    color: var(--color-claro);
+}
+
+aside ul li a:hover::before {
+    color: var(--color-claro);
+}
+
+aside ul li a:focus {
+    outline: 3px solid var(--color-secundario);
+    outline-offset: 2px;
+}
+
 main {
     background-color: var(--color-fondo);
     float: right;
@@ -74,34 +149,128 @@ main {
     padding: var(--espaciado-grande);
 }
 
+section > h2 {
+    margin: 0 var(--espaciado-medio);
+    padding-bottom: var(--espaciado-pequeno);
+    border-bottom: 3px solid var(--color-secundario);
+}
+
 article {
     background-color: var(--color-superficie);
     border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
     padding: var(--espaciado-grande);
     margin: var(--espaciado-medio);
+    transition: background-color var(--transicion), border-color var(--transicion), box-shadow var(--transicion);
+}
+
+article:hover {
+    background-color: var(--color-tarjeta-hover);
+    border-color: var(--color-secundario);
+    box-shadow: var(--sombra);
+}
+
+article img {
+    float: left;
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    margin: 0 var(--espaciado-grande) var(--espaciado-medio) 0;
+    transition: border-color var(--transicion);
+}
+
+article:hover img {
+    border-color: var(--color-secundario);
+}
+
+article h2 {
+    margin-top: 0;
+}
+
+article h2::after {
+    content: "¡Oferta!";
+    margin-left: var(--espaciado-medio);
+    padding: 2px var(--espaciado-pequeno);
+    font-size: 0.5em;
+    font-weight: 600;
+    vertical-align: middle;
+    color: var(--color-claro);
+    background-color: var(--color-secundario-oscuro);
+    border-radius: var(--radio);
+}
+
+article:first-of-type h2::after {
+    content: "Nuevo";
+    background-color: var(--color-primario);
+}
+
+.precio {
+    color: var(--color-secundario-oscuro);
+    font-weight: 600;
+}
+
+article::after {
+    content: "";
+    display: block;
+    clear: both;
+    width: 60px;
+    height: 4px;
+    margin-top: var(--espaciado-medio);
+    background-color: var(--color-secundario);
+    border-radius: var(--radio);
+    transition: width var(--transicion), background-color var(--transicion);
+}
+
+article:hover::after {
+    width: 120px;
+    background-color: var(--color-primario);
 }
 
 .btn-comprar {
-    color: var(--color-secundario);
-    font-weight: bold;
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: var(--color-claro);
+    font-weight: 600;
     text-decoration: none;
-    border: 2px solid currentColor;
-    padding: var(--espaciado-pequeno) var(--espaciado-medio);
+    border: 2px solid var(--color-primario);
+    border-radius: var(--radio);
+    padding: var(--espaciado-pequeno) var(--espaciado-grande);
+    transition: background-color var(--transicion), border-color var(--transicion), transform 0.1s ease;
 }
 
 .btn-comprar.btn-destacado {
-    color: var(--color-acento);
+    background-color: var(--color-acento);
+    border-color: var(--color-acento);
+}
+
+.btn-comprar:hover,
+.btn-comprar.btn-destacado:hover {
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+}
+
+.btn-comprar:focus,
+.btn-comprar.btn-destacado:focus {
+    background-color: var(--color-click);
+    border-color: var(--color-click);
+}
+
+.btn-comprar:active,
+.btn-comprar.btn-destacado:active {
+    background-color: var(--color-click);
+    border-color: var(--color-click);
+    transform: translateY(2px) scale(0.97);
 }
 
 footer {
     background-color: var(--color-primario);
+    border-top: 4px solid var(--color-secundario);
     color: var(--color-claro);
     clear: both;
     padding: var(--espaciado-grande);
-}
-
-footer p {
-    color: var(--color-claro);
 }
 
 footer ul {
