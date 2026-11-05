@@ -38,3 +38,29 @@ Sin esa regla, el navegador suma el padding y el borde al ancho declarado, y la 
 
 **3. Efecto del margen grande en los elementos hermanos**
 Cuando una tarjeta tiene un margen grande, empuja a las tarjetas vecinas y aumenta la distancia entre ellas, porque ese espacio exterior no se puede ocupar. Todo el bloque se desplaza y cambia la distribución de la página.
+## Hallazgos: Centralización de Identidad Visual y Espaciado
+
+**1. Variables declaradas en :root**
+
+| Variable | Valor |
+|----------|-------|
+| `--color-primario` | #191970 |
+| `--color-secundario` | #D2691E |
+| `--color-acento` | #DC143C |
+| `--color-texto` | #2F4F4F |
+| `--color-fondo` | #FDF5E6 |
+| `--color-fondo-lateral` | #FFF8DC |
+| `--color-superficie` | #FFFFFF |
+| `--color-claro` | #FFFAF0 |
+| `--color-borde` | #D2B48C |
+| `--color-panel` | rgba(255, 255, 255, 0.85) |
+| `--fuente-principal` | 'Poppins', Arial, Helvetica, sans-serif |
+| `--espaciado-pequeno` | 8px |
+| `--espaciado-medio` | 16px |
+| `--espaciado-grande` | 24px |
+
+**2. Ventaja de reutilizar medidas de margen y relleno**
+Si uso siempre los mismos tres valores, todas las tarjetas y secciones tienen la misma cantidad de aire y el diseño se ve ordenado. Además, si el cliente pide más o menos separación, cambio un solo número en `:root` en vez de buscar valores sueltos en muchos selectores.
+
+**3. Cómo :root previene colisiones visuales**
+Cuando la hoja de estilos crece, es fácil que dos selectores usen colores parecidos pero distintos o espacios que no coinciden. Al tener todo en `:root`, cada selector solo pide una variable y no inventa valores, así que el diseño sigue una sola paleta y una sola escala de espaciado, sin desajustes.
