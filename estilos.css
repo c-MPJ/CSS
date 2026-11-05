@@ -1,40 +1,20 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333333;
-}
- 
-h1 {
-    color: #1a237e;
-}
- 
-h2 {
-    color: #0d47a1;
-}
- 
-header nav ul li a {
-    color: #1565c0;    
-}
- 
-aside ul li a {
-    color: #2e7d32;      
-}
- 
-footer ul li a {
-    color: #6a1b9a;      
-}
- 
-footer p {
-    color: #555555;
-}
- 
-.btn-comprar {
-    color: #e65100;      
-    font-weight: bold;
-    text-decoration: none;
-}
- 
-.btn-comprar.btn-destacado {
-    color: #c62828;
+:root {
+    --color-primario: #191970;          
+    --color-secundario: #D2691E;      
+    --color-acento: #DC143C;            
+    --color-texto: #2F4F4F;             
+    --color-fondo: #FDF5E6;             
+    --color-fondo-lateral: #FFF8DC;     
+    --color-superficie: #FFFFFF;        
+    --color-claro: #FFFAF0;             
+    --color-borde: #D2B48C;             
+    --color-panel: rgba(234, 192, 192, 0.85);
+
+    --fuente-principal: 'Poppins', Arial, Helvetica, sans-serif;
+
+    --espaciado-pequeno: 8px;
+    --espaciado-medio: 16px;
+    --espaciado-grande: 24px;
 }
 
 * {
@@ -46,77 +26,82 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: rgb(255, 255, 255);
-}
-
-main {
-    background-color: #c6aeae;
-}
-
-aside {
-    background-color: #e3f2fd;
-}
-
-footer {
-    background-color: #d1c4e9;
-}
-
-article {
-    padding: 20px;
-    margin: 15px;
-}
-
-body {
-    margin: 0;
-}
-
-header {
-    padding: 30px 20px;
+    color: var(--color-claro);
+    padding: var(--espaciado-grande);
 }
 
 header h1 {
-    background-color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 15px 0;
-    padding: 10px 15px;
+    background-color: var(--color-panel);
+    margin: 0 0 var(--espaciado-medio) 0;
+    padding: var(--espaciado-pequeno) var(--espaciado-medio);
 }
 
 header nav ul {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: var(--color-panel);
     list-style: none;
     margin: 0;
-    padding: 10px 15px;
+    padding: var(--espaciado-pequeno) var(--espaciado-medio);
 }
 
 header nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: var(--espaciado-grande);
+}
+
+header nav ul li a {
+    color: var(--color-primario);
+}
+
+aside ul li a {
+    color: var(--color-secundario);
+}
+
+footer ul li a {
+    color: var(--color-claro);
 }
 
 aside {
+    background-color: var(--color-fondo-lateral);
     float: left;
     width: 25%;
-    padding: 20px;
+    padding: var(--espaciado-grande);
 }
 
 main {
+    background-color: var(--color-fondo);
     float: right;
     width: 75%;
-    padding: 20px;
+    padding: var(--espaciado-grande);
 }
 
 article {
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    padding: var(--espaciado-grande);
+    margin: var(--espaciado-medio);
 }
 
 .btn-comprar {
+    color: var(--color-secundario);
+    font-weight: bold;
+    text-decoration: none;
     border: 2px solid currentColor;
-    padding: 8px 14px;
+    padding: var(--espaciado-pequeno) var(--espaciado-medio);
+}
+
+.btn-comprar.btn-destacado {
+    color: var(--color-acento);
 }
 
 footer {
+    background-color: var(--color-primario);
+    color: var(--color-claro);
     clear: both;
-    padding: 20px;
+    padding: var(--espaciado-grande);
+}
+
+footer p {
+    color: var(--color-claro);
 }
 
 footer ul {
@@ -127,5 +112,5 @@ footer ul {
 
 footer ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: var(--espaciado-grande);
 }
