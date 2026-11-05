@@ -64,3 +64,14 @@ Si uso siempre los mismos tres valores, todas las tarjetas y secciones tienen la
 
 **3. Cómo :root previene colisiones visuales**
 Cuando la hoja de estilos crece, es fácil que dos selectores usen colores parecidos pero distintos o espacios que no coinciden. Al tener todo en `:root`, cada selector solo pide una variable y no inventa valores, así que el diseño sigue una sola paleta y una sola escala de espaciado, sin desajustes.
+
+## Hallazgos: Pseudoclases y Pseudoelementos
+
+**1. Diferencia entre pseudoclase y pseudoelemento**
+Una pseudoclase (`:hover`, `:active`, `:focus`) reacciona a lo que hace el usuario: pasar el cursor, hacer clic o navegar con el teclado, y cambia el estilo de un elemento que ya existe. Un pseudoelemento (`::before`, `::after`) crea contenido virtual antes o después de un elemento, como el ▸ del menú o la insignia "¡Oferta!", sin que exista en el HTML.
+
+**2. Importancia de :focus para la accesibilidad**
+Hay personas que no usan mouse y navegan con la tecla Tab. Con `:focus` y un contorno visible (`outline`) saben en qué enlace están parados. Sin esa señal se pierden en la página, así que es una práctica básica de accesibilidad web.
+
+**3. Por qué decorar con ::before y ::after en vez de HTML**
+Los adornos (insignias, iconos, líneas) son solo presentación y no tienen significado. Si los pongo con etiquetas vacías, ensucio el HTML y lo mezclo con el diseño. Con `::before` y `::after` el HTML queda limpio y semántico: la insignia "¡Oferta!", el ▸ del menú y la línea de las tarjetas viven solo en el CSS, y para cambiarlos o quitarlos edito un solo archivo.
