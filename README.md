@@ -45,25 +45,37 @@ css/
 - **Herencia:** la fuente y el color declarados en `body` los heredan los títulos, párrafos y listas sin repetirlos.
 - **Selectores combinados:** permiten dar un color distinto a los enlaces según su zona (menú, filtros y pie de página) sin afectar a los demás.
 - **Cascada vs. especificidad:** el selector con ID (100 pts) ganó sobre la clase (10 pts) aunque la clase estaba escrita después.
+<<<<<<< HEAD
 - **Solución:** se eliminó el ID del CSS y se usó un sistema plano de etiquetas y clases, sin usar `!important`.
 
 ## Hallazgos: El Modelo de Caja
 
 **1. Diferencia entre Margin y Padding**
 El padding es el espacio de adentro de la caja, entre el contenido y el borde, y se pinta con el fondo del elemento. El margin es el espacio de afuera, que separa una caja de las demás y es transparente. En el catálogo, el padding (24px) evita que el texto de la tarjeta toque su borde, y el margin (16px) evita que las tarjetas se peguen entre sí.
+=======
+- **Solución:** se eliminó el ID del CSS y se usó un sistema plano de etiquetas y clases (`.btn-comprar.btn-destacado`, 20 pts), sin usar `!important`.
+## Hallazgos: El Modelo de Caja
+
+**1. Diferencia entre Margin y Padding**
+El padding es el espacio de adentro de la caja, entre el contenido y el borde, y se pinta con el fondo del elemento. El margin es el espacio de afuera, que separa una caja de las demás y es transparente. En el catálogo, el padding (20px) evita que el texto de la tarjeta toque su borde, y el margin (15px) evita que las tarjetas se peguen entre sí.
+>>>>>>> 1336c5bd07885b4829dbdf82bcf1773128dc2a95
 
 **2. Por qué es obligatorio usar box-sizing: border-box**
 Sin esa regla, el navegador suma el padding y el borde al ancho declarado, y la caja termina más grande de lo esperado y puede romper el contenedor padre. Con `border-box`, el padding y el borde se cuentan dentro del ancho, y la caja mantiene el tamaño que le definimos.
 
 **3. Efecto del margen grande en los elementos hermanos**
 Cuando una tarjeta tiene un margen grande, empuja a las tarjetas vecinas y aumenta la distancia entre ellas, porque ese espacio exterior no se puede ocupar. Todo el bloque se desplaza y cambia la distribución de la página.
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1336c5bd07885b4829dbdf82bcf1773128dc2a95
 ## Hallazgos: Centralización de Identidad Visual y Espaciado
 
 **1. Variables declaradas en :root**
 
 | Variable | Valor |
 |----------|-------|
+<<<<<<< HEAD
 | `--color-primario` | #2F4F4F |
 | `--color-secundario` | #B8860B |
 | `--color-secundario-oscuro` | #8B4513 |
@@ -77,13 +89,28 @@ Cuando una tarjeta tiene un margen grande, empuja a las tarjetas vecinas y aumen
 | `--color-claro` | #FFFAF0 |
 | `--color-borde` | #D2B48C |
 | `--color-panel` | rgba(255, 255, 255, 0.88) |
+=======
+| `--color-primario` | #191970 |
+| `--color-secundario` | #D2691E |
+| `--color-acento` | #DC143C |
+| `--color-texto` | #2F4F4F |
+| `--color-fondo` | #FDF5E6 |
+| `--color-fondo-lateral` | #FFF8DC |
+| `--color-superficie` | #FFFFFF |
+| `--color-claro` | #FFFAF0 |
+| `--color-borde` | #D2B48C |
+| `--color-panel` | rgba(255, 255, 255, 0.85) |
+>>>>>>> 1336c5bd07885b4829dbdf82bcf1773128dc2a95
 | `--fuente-principal` | 'Poppins', Arial, Helvetica, sans-serif |
 | `--espaciado-pequeno` | 8px |
 | `--espaciado-medio` | 16px |
 | `--espaciado-grande` | 24px |
+<<<<<<< HEAD
 | `--radio` | 6px |
 | `--transicion` | 0.3s ease |
 | `--sombra` | 0 8px 20px rgba(47, 79, 79, 0.3) |
+=======
+>>>>>>> 1336c5bd07885b4829dbdf82bcf1773128dc2a95
 
 **2. Ventaja de reutilizar medidas de margen y relleno**
 Si uso siempre los mismos tres valores, todas las tarjetas y secciones tienen la misma cantidad de aire y el diseño se ve ordenado. Además, si el cliente pide más o menos separación, cambio un solo número en `:root` en vez de buscar valores sueltos en muchos selectores.
@@ -101,6 +128,7 @@ Hay personas que no usan mouse y navegan con la tecla Tab. Con `:focus` y un con
 
 **3. Por qué decorar con ::before y ::after en vez de HTML**
 Los adornos (insignias, iconos, líneas) son solo presentación y no tienen significado. Si los pongo con etiquetas vacías, ensucio el HTML y lo mezclo con el diseño. Con `::before` y `::after` el HTML queda limpio y semántico: la insignia "¡Oferta!", el ▸ del menú y la línea de las tarjetas viven solo en el CSS, y para cambiarlos o quitarlos edito un solo archivo.
+<<<<<<< HEAD
 
 ## Hallazgos: Arquitectura BEM y Modularidad
 
@@ -112,3 +140,5 @@ Cuando cada componente vive en su propio archivo (`tarjeta.css`, `botones.css`, 
 
 **3. Cómo BEM evita la guerra de especificidad**
 Antes usaba selectores anidados como `article h2` o `header nav ul li a`, que pesan más y se pisan entre sí. Con BEM cada regla usa una sola clase (peso 10), sin depender de dónde está el elemento en el HTML. Como todas pesan lo mismo, ninguna le gana a otra por accidente, y solo cambia el orden cuando de verdad hace falta. Las únicas reglas con más peso son los estados (`:hover`, `:focus`, `:active`), y es a propósito.
+=======
+>>>>>>> 1336c5bd07885b4829dbdf82bcf1773128dc2a95
