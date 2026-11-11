@@ -1,0 +1,46 @@
+/* Bloque: btn */
+.btn {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: var(--color-claro);
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--color-primario);
+    border-radius: var(--radio);
+    padding: var(--espaciado-pequeno) var(--espaciado-grande);
+    transition: background-color var(--transicion), border-color var(--transicion), transform 0.1s ease;
+}
+
+/* Modificadores */
+.btn--destacado {
+    background-color: var(--color-acento);
+    border-color: var(--color-acento);
+}
+
+.btn--secundario {
+    background-color: transparent;
+    color: var(--color-primario);
+}
+
+/* Estados (pseudoclases) */
+.btn:hover {
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+}
+
+.btn:focus {
+    background-color: var(--color-click);
+    border-color: var(--color-click);
+}
+
+.btn:active {
+    background-color: var(--color-click);
+    border-color: var(--color-click);
+    transform: translateY(2px) scale(0.97);
+}
+
+.btn--secundario:hover,
+.btn--secundario:focus,
+.btn--secundario:active {
+    color: var(--color-claro);
+}

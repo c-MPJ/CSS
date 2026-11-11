@@ -1,0 +1,14 @@
+/* Bloque: catalog */
+.catalog {
+    background-color: var(--color-fondo);
+    float: right;
+    width: 75%;
+    padding: var(--espaciado-grande);
+}
+
+.catalog__title {
+    color: var(--color-primario);
+    margin: 0 var(--espaciado-medio);
+    padding-bottom: var(--espaciado-pequeno);
+    border-bottom: 3px solid var(--color-secundario);
+}
