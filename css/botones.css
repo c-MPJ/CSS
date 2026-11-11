@@ -1,4 +1,5 @@
-.btn-comprar {
+/* Bloque: btn */
+.btn {
     display: inline-block;
     background-color: var(--color-primario);
     color: var(--color-claro);
@@ -10,26 +11,36 @@
     transition: background-color var(--transicion), border-color var(--transicion), transform 0.1s ease;
 }
 
-.btn-comprar.btn-destacado {
+/* Modificadores */
+.btn--destacado {
     background-color: var(--color-acento);
     border-color: var(--color-acento);
 }
 
-.btn-comprar:hover,
-.btn-comprar.btn-destacado:hover {
+.btn--secundario {
+    background-color: transparent;
+    color: var(--color-primario);
+}
+
+/* Estados (pseudoclases) */
+.btn:hover {
     background-color: var(--color-secundario);
     border-color: var(--color-secundario);
 }
 
-.btn-comprar:focus,
-.btn-comprar.btn-destacado:focus {
+.btn:focus {
     background-color: var(--color-click);
     border-color: var(--color-click);
 }
 
-.btn-comprar:active,
-.btn-comprar.btn-destacado:active {
+.btn:active {
     background-color: var(--color-click);
     border-color: var(--color-click);
     transform: translateY(2px) scale(0.97);
+}
+
+.btn--secundario:hover,
+.btn--secundario:focus,
+.btn--secundario:active {
+    color: var(--color-claro);
 }

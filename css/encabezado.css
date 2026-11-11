@@ -1,4 +1,5 @@
-header {
+/* Bloque: header */
+.header {
     background-image: url('../header.jpg');
     background-size: cover;
     background-position: center;
@@ -7,32 +8,34 @@ header {
     padding: var(--espaciado-grande);
 }
 
-header h1 {
+.header__title {
     background-color: var(--color-panel);
     border-left: 6px solid var(--color-secundario);
+    color: var(--color-primario);
     margin: 0 0 var(--espaciado-medio) 0;
     padding: var(--espaciado-pequeno) var(--espaciado-medio);
 }
 
-header nav ul {
+/* Bloque: main-nav */
+.main-nav__list {
     background-color: var(--color-panel);
     list-style: none;
     margin: 0;
     padding: var(--espaciado-pequeno) var(--espaciado-medio);
 }
 
-header nav ul li {
+.main-nav__item {
     display: inline;
     margin-right: var(--espaciado-grande);
 }
 
-header nav ul li a {
+.main-nav__link {
     color: var(--color-primario);
     font-weight: 600;
     text-decoration: none;
     transition: color var(--transicion);
 }
 
-header nav ul li a:hover {
+.main-nav__link:hover {
     color: var(--color-secundario-oscuro);
 }

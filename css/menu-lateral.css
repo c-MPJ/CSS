@@ -1,27 +1,29 @@
-aside {
+/* Bloque: sidebar */
+.sidebar {
     background-color: var(--color-fondo-lateral);
     float: left;
     width: 25%;
     padding: var(--espaciado-grande);
 }
 
-aside h2 {
+.sidebar__title {
+    color: var(--color-primario);
     margin-top: 0;
     padding-bottom: var(--espaciado-pequeno);
     border-bottom: 3px solid var(--color-secundario);
 }
 
-aside ul {
+.sidebar__list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-aside ul li {
+.sidebar__item {
     margin-bottom: var(--espaciado-pequeno);
 }
 
-aside ul li a {
+.sidebar__link {
     display: block;
     padding: var(--espaciado-pequeno) var(--espaciado-medio);
     color: var(--color-secundario-oscuro);
@@ -31,21 +33,21 @@ aside ul li a {
     transition: background-color var(--transicion), color var(--transicion);
 }
 
-aside ul li a::before {
+.sidebar__link::before {
     content: "\25B8  ";
     color: var(--color-secundario);
 }
 
-aside ul li a:hover {
+.sidebar__link:hover {
     background-color: var(--color-primario);
     color: var(--color-claro);
 }
 
-aside ul li a:hover::before {
+.sidebar__link:hover::before {
     color: var(--color-claro);
 }
 
-aside ul li a:focus {
+.sidebar__link:focus {
     outline: 3px solid var(--color-secundario);
     outline-offset: 2px;
 }
