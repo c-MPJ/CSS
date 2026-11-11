@@ -1,0 +1,12 @@
+main {
+    background-color: var(--color-fondo);
+    float: right;
+    width: 75%;
+    padding: var(--espaciado-grande);
+}
+
+section > h2 {
+    margin: 0 var(--espaciado-medio);
+    padding-bottom: var(--espaciado-pequeno);
+    border-bottom: 3px solid var(--color-secundario);
+}

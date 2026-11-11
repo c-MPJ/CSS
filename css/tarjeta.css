@@ -1,0 +1,73 @@
+article {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: var(--espaciado-grande);
+    margin: var(--espaciado-medio);
+    transition: background-color var(--transicion), border-color var(--transicion), box-shadow var(--transicion);
+}
+
+article:hover {
+    background-color: var(--color-tarjeta-hover);
+    border-color: var(--color-secundario);
+    box-shadow: var(--sombra);
+}
+
+article img {
+    float: left;
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    margin: 0 var(--espaciado-grande) var(--espaciado-medio) 0;
+    transition: border-color var(--transicion);
+}
+
+article:hover img {
+    border-color: var(--color-secundario);
+}
+
+article h2 {
+    margin-top: 0;
+}
+
+article h2::after {
+    content: "¡Oferta!";
+    margin-left: var(--espaciado-medio);
+    padding: 2px var(--espaciado-pequeno);
+    font-size: 0.5em;
+    font-weight: 600;
+    vertical-align: middle;
+    color: var(--color-claro);
+    background-color: var(--color-secundario-oscuro);
+    border-radius: var(--radio);
+}
+
+article:first-of-type h2::after {
+    content: "Nuevo";
+    background-color: var(--color-primario);
+}
+
+.precio {
+    color: var(--color-secundario-oscuro);
+    font-weight: 600;
+}
+
+article::after {
+    content: "";
+    display: block;
+    clear: both;
+    width: 60px;
+    height: 4px;
+    margin-top: var(--espaciado-medio);
+    background-color: var(--color-secundario);
+    border-radius: var(--radio);
+    transition: width var(--transicion), background-color var(--transicion);
+}
+
+article:hover::after {
+    width: 120px;
+    background-color: var(--color-primario);
+}

@@ -1,0 +1,35 @@
+.btn-comprar {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: var(--color-claro);
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--color-primario);
+    border-radius: var(--radio);
+    padding: var(--espaciado-pequeno) var(--espaciado-grande);
+    transition: background-color var(--transicion), border-color var(--transicion), transform 0.1s ease;
+}
+
+.btn-comprar.btn-destacado {
+    background-color: var(--color-acento);
+    border-color: var(--color-acento);
+}
+
+.btn-comprar:hover,
+.btn-comprar.btn-destacado:hover {
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+}
+
+.btn-comprar:focus,
+.btn-comprar.btn-destacado:focus {
+    background-color: var(--color-click);
+    border-color: var(--color-click);
+}
+
+.btn-comprar:active,
+.btn-comprar.btn-destacado:active {
+    background-color: var(--color-click);
+    border-color: var(--color-click);
+    transform: translateY(2px) scale(0.97);
+}
