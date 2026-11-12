@@ -1,10 +1,15 @@
-/* Bloque: card */
+
 .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-medio);
+    height: 100%;
+    flex: 1 1 calc(50% - var(--espaciado-pequeno));
+    min-width: 280px;
     background-color: var(--color-superficie);
     border: 1px solid var(--color-borde);
     border-radius: var(--radio);
     padding: var(--espaciado-grande);
-    margin: var(--espaciado-medio);
     transition: background-color var(--transicion), border-color var(--transicion), box-shadow var(--transicion);
 }
 
@@ -14,14 +19,10 @@
     box-shadow: var(--sombra);
 }
 
-/* Línea decorativa inferior */
 .card::after {
     content: "";
-    display: block;
-    clear: both;
     width: 60px;
     height: 4px;
-    margin-top: var(--espaciado-medio);
     background-color: var(--color-secundario);
     border-radius: var(--radio);
     transition: width var(--transicion), background-color var(--transicion);
@@ -32,16 +33,14 @@
     background-color: var(--color-primario);
 }
 
-/* Elementos */
 .card__image {
-    float: left;
-    width: 180px;
-    height: 180px;
+    width: 100%;
+    height: 200px;
+    flex-shrink: 0;
     object-fit: contain;
     background-color: var(--color-superficie);
     border: 1px solid var(--color-borde);
     border-radius: var(--radio);
-    margin: 0 var(--espaciado-grande) var(--espaciado-medio) 0;
     transition: border-color var(--transicion);
 }
 
@@ -51,10 +50,9 @@
 
 .card__title {
     color: var(--color-primario);
-    margin-top: 0;
+    margin: 0;
 }
 
-/* Insignia virtual junto al título */
 .card__title::after {
     content: "¡Oferta!";
     margin-left: var(--espaciado-medio);
@@ -67,12 +65,32 @@
     border-radius: var(--radio);
 }
 
-.card__price {
-    color: var(--color-secundario-oscuro);
-    font-weight: 600;
+/*absorbe el espacio libre y empuja precio y botón al fondo */
+.card__description {
+    flex-grow: 1;
+    margin: 0;
 }
 
-/* Modificador: tarjeta destacada */
+/*precio de oferta junto al precio original tachado */
+.card__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.card__price {
+    color: var(--color-secundario-oscuro);
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card__price-old {
+    color: var(--color-texto-suave);
+    text-decoration: line-through;
+}
+
+/*tarjeta destacada */
 .card--destacada {
     border-color: var(--color-secundario);
 }

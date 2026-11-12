@@ -1,26 +1,28 @@
-/* Bloque: sidebar */
+
 .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-grande);
+    flex: 0 0 25%;
+    min-width: 220px;
     background-color: var(--color-fondo-lateral);
-    float: left;
-    width: 25%;
     padding: var(--espaciado-grande);
 }
 
 .sidebar__title {
     color: var(--color-primario);
-    margin-top: 0;
+    margin: 0;
     padding-bottom: var(--espaciado-pequeno);
     border-bottom: 3px solid var(--color-secundario);
 }
 
 .sidebar__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-pequeno);
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.sidebar__item {
-    margin-bottom: var(--espaciado-pequeno);
 }
 
 .sidebar__link {

@@ -1,14 +1,26 @@
-/* Bloque: catalog */
+
 .catalog {
+    flex: 1;
+    min-width: 0;
     background-color: var(--color-fondo);
-    float: right;
-    width: 75%;
     padding: var(--espaciado-grande);
+}
+
+.catalog__section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-grande);
 }
 
 .catalog__title {
     color: var(--color-primario);
-    margin: 0 var(--espaciado-medio);
+    margin: 0;
     padding-bottom: var(--espaciado-pequeno);
     border-bottom: 3px solid var(--color-secundario);
+}
+
+.catalog__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaciado-medio);
 }
