@@ -4,10 +4,9 @@ Simulador de entrenamiento: maquetado semántico, jerarquía de estilos, modelo 
 
 ## Estructura del proyecto
 
-```
 css/
 ├── index.html
-├── estilos.css          (@import de los módulos + variables :root)
+├── estilos.css
 ├── header.jpg
 ├── img/
 └── css/
@@ -18,7 +17,6 @@ css/
     ├── tarjeta.css
     ├── botones.css
     └── pie-pagina.css
-```
 
 ## Cálculo de puntos de especificidad
 
