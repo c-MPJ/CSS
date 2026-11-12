@@ -50,7 +50,7 @@ css/
 
 **1. Diferencia entre Margin y Padding**
 El padding es el espacio de adentro de la caja, entre el contenido y el borde, y se pinta con el fondo del elemento. El margin es el espacio de afuera, que separa una caja de las demás y es transparente. En el catálogo, el padding (24px) evita que el texto de la tarjeta toque su borde, y el margin (16px) evita que las tarjetas se peguen entre sí.
-=======
+
 - **Solución:** se eliminó el ID del CSS y se usó un sistema plano de etiquetas y clases (`.btn-comprar.btn-destacado`, 20 pts), sin usar `!important`.
 ## Hallazgos: El Modelo de Caja
 
