@@ -56,7 +56,6 @@ El padding es el espacio de adentro de la caja, entre el contenido y el borde, y
 
 **1. Diferencia entre Margin y Padding**
 El padding es el espacio de adentro de la caja, entre el contenido y el borde, y se pinta con el fondo del elemento. El margin es el espacio de afuera, que separa una caja de las demás y es transparente. En el catálogo, el padding (20px) evita que el texto de la tarjeta toque su borde, y el margin (15px) evita que las tarjetas se peguen entre sí.
->>>>>>> 1336c5bd07885b4829dbdf82bcf1773128dc2a95
 
 **2. Por qué es obligatorio usar box-sizing: border-box**
 Sin esa regla, el navegador suma el padding y el borde al ancho declarado, y la caja termina más grande de lo esperado y puede romper el contenedor padre. Con `border-box`, el padding y el borde se cuentan dentro del ancho, y la caja mantiene el tamaño que le definimos.
@@ -65,8 +64,6 @@ Sin esa regla, el navegador suma el padding y el borde al ancho declarado, y la 
 Cuando una tarjeta tiene un margen grande, empuja a las tarjetas vecinas y aumenta la distancia entre ellas, porque ese espacio exterior no se puede ocupar. Todo el bloque se desplaza y cambia la distribución de la página.
 <<<<<<< HEAD
 
-=======
->>>>>>> 1336c5bd07885b4829dbdf82bcf1773128dc2a95
 ## Hallazgos: Centralización de Identidad Visual y Espaciado
 
 **1. Variables declaradas en :root**
@@ -98,7 +95,6 @@ Cuando una tarjeta tiene un margen grande, empuja a las tarjetas vecinas y aumen
 | `--color-claro` | #FFFAF0 |
 | `--color-borde` | #D2B48C |
 | `--color-panel` | rgba(255, 255, 255, 0.85) |
->>>>>>> 1336c5bd07885b4829dbdf82bcf1773128dc2a95
 | `--fuente-principal` | 'Poppins', Arial, Helvetica, sans-serif |
 | `--espaciado-pequeno` | 8px |
 | `--espaciado-medio` | 16px |
@@ -108,7 +104,6 @@ Cuando una tarjeta tiene un margen grande, empuja a las tarjetas vecinas y aumen
 | `--transicion` | 0.3s ease |
 | `--sombra` | 0 8px 20px rgba(47, 79, 79, 0.3) |
 =======
->>>>>>> 1336c5bd07885b4829dbdf82bcf1773128dc2a95
 
 **2. Ventaja de reutilizar medidas de margen y relleno**
 Si uso siempre los mismos tres valores, todas las tarjetas y secciones tienen la misma cantidad de aire y el diseño se ve ordenado. Además, si el cliente pide más o menos separación, cambio un solo número en `:root` en vez de buscar valores sueltos en muchos selectores.
@@ -139,4 +134,3 @@ Cuando cada componente vive en su propio archivo (`tarjeta.css`, `botones.css`, 
 **3. Cómo BEM evita la guerra de especificidad**
 Antes usaba selectores anidados como `article h2` o `header nav ul li a`, que pesan más y se pisan entre sí. Con BEM cada regla usa una sola clase (peso 10), sin depender de dónde está el elemento en el HTML. Como todas pesan lo mismo, ninguna le gana a otra por accidente, y solo cambia el orden cuando de verdad hace falta. Las únicas reglas con más peso son los estados (`:hover`, `:focus`, `:active`), y es a propósito.
 =======
->>>>>>> 1336c5bd07885b4829dbdf82bcf1773128dc2a95
